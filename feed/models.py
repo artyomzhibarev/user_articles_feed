@@ -12,7 +12,6 @@ class CustomUserManager(BaseUserManager):
     for authentication instead of usernames.
     """
     def create_user(self, email, password, **extra_fields):
-        print('create_user')
         """
         Create and save a User with the given email and password.
         """
@@ -23,7 +22,6 @@ class CustomUserManager(BaseUserManager):
         user.set_password(password)
         user.save()
         group, created = Group.objects.get_or_create(name='subscribers')
-        print(group.name)
         if created:
             content_type = ContentType.objects.get_for_model(Article)
             permission = Permission.objects.get(
@@ -32,7 +30,6 @@ class CustomUserManager(BaseUserManager):
             )
             group.permissions.add(permission)
         user.groups.add(group)
-        print(f'User: {user.email} has been created. Group: {group.name}')
         return user
 
     def create_superuser(self, email, password, **extra_fields):
@@ -84,7 +81,3 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
-
-
-def add_group(sender, instance: User, created, **kwargs):
-    user = User.objects.create_user(email='user@user.com', password='wrekwjr3i323')
