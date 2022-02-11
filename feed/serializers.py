@@ -17,7 +17,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
-        max_length=69, min_length=8, write_only=True)
+        max_length=69, min_length=settings.MIN_LENGTH_PASSWORD, write_only=True)
     email = serializers.EmailField(max_length=150, min_length=4),
 
     class Meta:
@@ -42,13 +42,3 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
-
-
-class RegisterUserSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(max_length=69,
-                                     min_length=settings.MIN_LENGTH_PASSWORD,
-                                     write_only=True)
-
-    class Meta:
-        model = User
-        fields = ('email', 'password')
