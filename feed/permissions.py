@@ -25,5 +25,7 @@ class IsSubscriberOrReadOnly(BasePermission):
         """
         if request.method in SAFE_METHODS:
             return True
-        elif request.user and request.user.is_authenticated and request.user.groups.filter(name='authors').exists():
+        elif request.user and request.user.is_authenticated \
+                and request.user.groups.filter(name='authors').exists() \
+                or request.user.is_superuser:
             return True
