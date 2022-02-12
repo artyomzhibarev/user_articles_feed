@@ -1,1 +1,1 @@
-web: gunicorn feed.wsgi --log-file -
+web: gunicorn user_articles_feed.wsgi --log-file -
