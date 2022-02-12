@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, AllowAny
@@ -52,8 +53,8 @@ class RegisterUser(generics.CreateAPIView):
 
 
 class BasicAuthUser(APIView):
-    # authentication_classes = [BasicAuthentication, SessionAuthentication]
-    permission_classes = [AllowAny, ]
+    authentication_classes = [BasicAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated, ]
 
     def get(self, request, format=None):
         content = {
