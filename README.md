@@ -20,7 +20,12 @@ c) пароль должен быть не короче 8 символов и с
 
 
 Список стаей: https://feedartcleusers.herokuapp.com/api/v1/articles/
+
 Отдельная статья: https://feedartcleusers.herokuapp.com/api/v1/articles/<int:pk>/
+
 Регистрация https://feedartcleusers.herokuapp.com/api/v1/auth/registration/
+
 Логин https://feedartcleusers.herokuapp.com/api/v1/auth/login/
+
 Логаут https://feedartcleusers.herokuapp.com/api/v1/auth/logout/
+
