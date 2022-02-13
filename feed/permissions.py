@@ -10,6 +10,7 @@ class IsOwnerOrReadOnly(BasePermission):
         :param obj:
         :return:
         """
+        print('fix')
         if request.method in SAFE_METHODS:
             if request.user.groups.filter(name='subscribers').exists() or obj.is_public:
                 return True
