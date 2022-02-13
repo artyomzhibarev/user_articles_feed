@@ -30,6 +30,7 @@ SECRET_KEY = 'django-insecure--0i@=&e)q7($40+lxlc&kw((8e$sws3cleovmz^7-4g7@+)x*m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'feed.User'
