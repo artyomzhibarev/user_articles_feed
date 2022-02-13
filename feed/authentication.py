@@ -20,7 +20,6 @@ class BasicAuthentication(BaseAuthentication):
 
     def authenticate(self, request):
         auth = get_authorization_header(request).split()
-        print(23, auth)
         if not auth:
             return None
         method, data = get_authorization_header(request).split()
