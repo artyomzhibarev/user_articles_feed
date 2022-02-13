@@ -17,3 +17,10 @@ c) пароль должен быть не короче 8 символов и с
 4. чтения статей закрытых статей (только для подписчиков) пользователями с ролью "подписчик";
 5. создания новых статей ролью "автор";
 6. редактирования и удаления статей. Автор может удалять или редактировать только те статьи, которые он написал.
+
+
+Список стаей: https://feedartcleusers.herokuapp.com/api/v1/articles/
+Отдельная статья: https://feedartcleusers.herokuapp.com/api/v1/articles/<int:pk>/
+Регистрация https://feedartcleusers.herokuapp.com/api/v1/auth/registration/
+Логин https://feedartcleusers.herokuapp.com/api/v1/auth/login/
+Логаут https://feedartcleusers.herokuapp.com/api/v1/auth/logout/
