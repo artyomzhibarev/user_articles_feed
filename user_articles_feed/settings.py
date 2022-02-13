@@ -156,8 +156,13 @@ DEFAULT_RENDERER_CLASSES = [
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES,
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    # 'feed.authentication.ExampleAuthentication', # custom authentication class
-    # ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'feed.authentication.BasicAuthentication',
+    ),
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # )
 }
 django_heroku.settings(locals())
