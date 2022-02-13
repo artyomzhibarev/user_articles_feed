@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 
 from feed.permissions import IsOwnerOrReadOnly, IsSubscriberOrReadOnly
 from feed.serializers import ArticleSerializer, Article, UserSerializer
-#sfsdf
+
 
 class ArticleList(generics.ListCreateAPIView):
     queryset = Article.objects.all()
