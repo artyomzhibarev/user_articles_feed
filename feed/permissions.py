@@ -11,7 +11,8 @@ class IsOwnerOrReadOnly(BasePermission):
         :return:
         """
         if request.method in SAFE_METHODS:
-            return True
+            if request.user.groups.filter('subscriber') or obj.is_public:
+                return True
         return obj.author == request.user
 
 
